@@ -21,12 +21,13 @@ app.get('/', (req, res) => {
   res.send('Hello to memories API')
 })
 
+const CONNECTION_URL = 'mongodb+srv://Hieu:123@cluster0.xhllr.mongodb.net/postMessages?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    app.listen(5000, () => console.log(`Server running on port ${5000}`));
   })
   .catch((err) => {
     console.log(err.message);
